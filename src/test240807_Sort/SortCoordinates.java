@@ -1,10 +1,10 @@
-package test240807;
+package test240807_Sort;
 
 import java.io.*;
 import java.util.*;
 import java.lang.*;
 
-class SortCoordinates2 {
+class SortCoordinates {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); // 버퍼리더
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)); // 버퍼라이터
@@ -20,10 +20,10 @@ class SortCoordinates2 {
 		}
 
 		Arrays.sort(xy, (o1, o2) -> {
-            if(o1[1] == o2[1]){
-                return o1[0] - o2[0];
+            if(o1[0] == o2[0]){
+                return o1[1] - o2[1];
             }
-			else return o1[1] - o2[1];
+			else return o1[0] - o2[0];
 		});
 
         for(int i = 0; i < N; i++){
