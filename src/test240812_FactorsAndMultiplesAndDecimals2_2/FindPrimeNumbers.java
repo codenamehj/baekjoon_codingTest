@@ -13,9 +13,11 @@ class FindPrimeNumbers {
 		int M = Integer.parseInt(st.nextToken());
 		int N = Integer.parseInt(st.nextToken());
 
-		boolean[] prime = new boolean[N + 1];
+		// 배열의 인덱스는 0부터이니 N + 1 크기의 배열 생성하여 N까지 표현할 수 있게 함.
+		boolean[] prime = new boolean[N + 1]; 
 
-		// 다시 이해 하기!
+		// 에라토스테네스의 체를 이용하여 소수 구하기
+		// true = 합성수, false = 소수
 		for (int i = 2; i <= N; i++) {
 			if (prime[i])
 				continue;
