@@ -1,4 +1,4 @@
-package test240812_StackQueueDeck;
+package test240812_StackQueueDeck_1;
 
 import java.io.*;
 import java.util.*;
@@ -11,13 +11,13 @@ class Parentheses {
 		int T = Integer.parseInt(br.readLine());
 
 		for (int i = 0; i < T; i++) {
-			sb.append(solve(br.readLine())).append('\n');
+			sb.append(pString(br.readLine())).append('\n');
 		}
 
 		System.out.println(sb);
 	}
 
-	public static String solve(String s) {
+	public static String pString(String s) {
 
 		Stack<Character> stack = new Stack<>();
 
