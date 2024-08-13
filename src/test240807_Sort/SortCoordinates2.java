@@ -2,7 +2,6 @@ package test240807_Sort;
 
 import java.io.*;
 import java.util.*;
-import java.lang.*;
 
 class SortCoordinates2 {
 	public static void main(String[] args) throws IOException {

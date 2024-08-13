@@ -1,4 +1,4 @@
-package test240813_StackQueueDeck_2;
+package test240813_StackQueueDeque_2;
 
 import java.io.*;
 import java.util.*;
@@ -45,6 +45,7 @@ class ABalancedWorld {
 
 			}
 
+			// 닫는 대괄호일 경우
 			else if (c == ']') {
 				// 스택이 비어있거나 pop할 원소가 대괄호랑 매칭이 안되는 경우
 				if (stack.empty() || stack.peek() != '[') {

@@ -1,4 +1,4 @@
-package test240812_StackQueueDeck_1;
+package test240812_StackQueueDeque_1;
 
 import java.io.*;
 import java.util.*;

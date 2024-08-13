@@ -1,9 +1,9 @@
-package test240812_StackQueueDeck_1;
+package test240813_StackQueueDeque_2;
 
 import java.io.*;
 import java.util.*;
 
-class Stack2 {
+class Deque2 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); // 버퍼리더
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)); // 버퍼라이터
@@ -11,7 +11,7 @@ class Stack2 {
 
 		int N = Integer.parseInt(br.readLine()); // 명령의 수
 
-		Stack<Integer> intStack = new Stack<Integer>();
+		Deque<Integer> deque = new LinkedList<>();
 
 		for (int i = 0; i < N; i++) {
 			st = new StringTokenizer(br.readLine());
@@ -21,26 +21,42 @@ class Stack2 {
 			if (command == 1) {
 				int num = Integer.parseInt(st.nextToken());
 
-				intStack.push(num);
+				deque.addFirst(num);
 			} else if (command == 2) {
-				if (intStack.isEmpty()) {
+				int num = Integer.parseInt(st.nextToken());
+
+				deque.addLast(num);
+			} else if (command == 3) {
+				if (deque.isEmpty()) {
 					bw.write("-1\n");
 				} else {
-					bw.write(intStack.pop() + "\n");
+					bw.write(deque.removeFirst() + "\n");
 				}
-			} else if (command == 3) {
-				bw.write(intStack.size() + "\n");
 			} else if (command == 4) {
-				if (intStack.isEmpty()) {
+				if (deque.isEmpty()) {
+					bw.write("-1\n");
+				} else {
+					bw.write(deque.removeLast() + "\n");
+				}
+			} else if (command == 5) {
+				bw.write(deque.size() + "\n");
+			} else if (command == 6) {
+				if (deque.isEmpty()) {
 					bw.write("1\n");
 				} else {
 					bw.write("0\n");
 				}
-			} else if (command == 5) {
-				if (intStack.isEmpty()) {
+			} else if (command == 7) {
+				if (deque.isEmpty()) {
 					bw.write("-1\n");
 				} else {
-					bw.write(intStack.peek() + "\n");
+					bw.write(deque.peekFirst() + "\n");
+				}
+			} else if (command == 8) {
+				if (deque.isEmpty()) {
+					bw.write("-1\n");
+				} else {
+					bw.write(deque.peekLast() + "\n");
 				}
 			}
 		}

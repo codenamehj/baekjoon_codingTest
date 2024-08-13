@@ -1,7 +1,6 @@
 package test240812_FactorsAndMultiplesAndDecimals2_2;
 
 import java.io.*;
-import java.util.*;
 
 class GoldbachPartition {
 	public static void main(String[] args) throws IOException {
