@@ -23,7 +23,7 @@ class QueueStack {
 		st = new StringTokenizer(br.readLine());
 		for (int i = 0; i < N; i++) {
 			int num = Integer.parseInt(st.nextToken());
-			if (sArr[i] == 0)
+			if (sArr[i] == 0) // 큐인 경우에만 덱에 저장
 				deque.addLast(num);
 		}
 
