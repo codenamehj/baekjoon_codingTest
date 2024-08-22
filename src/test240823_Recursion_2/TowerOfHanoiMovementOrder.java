@@ -18,9 +18,9 @@ class TowerOfHanoiMovementOrder {
 	}
 
 	/*
-	 * N : 원판의 개수 
-	 * start : 출발지 
-	 * mid : 옮기기 위해 이동해야 장소 
+	 * N : 원판의 개수
+	 * start : 출발지
+	 * mid : 옮기기 위해 이동해야 장소
 	 * to : 목적지
 	 */
 
