@@ -1,13 +1,11 @@
-package test240823_Backtracking;
+package test240828_Backtracking_2;
 
 import java.io.*;
 import java.util.*;
 
-class NAndM_1 {
-	static int N;
-	static int M;
+class NAndM_4 {
+	static int N, M;
 	static int[] arr;
-	static boolean[] visit;
 	static StringBuilder sb = new StringBuilder();
 
 	public static void main(String[] args) throws IOException {
@@ -18,15 +16,14 @@ class NAndM_1 {
 		N = Integer.parseInt(st.nextToken());
 		M = Integer.parseInt(st.nextToken());
 
-		visit = new boolean[N];
 		arr = new int[M];
 
-		dfs(0);
+		dfs(1, 0);
 
 		System.out.println(sb);
 	}
 
-	static void dfs(int depth) {
+	static void dfs(int at, int depth) {
 		// 재귀 깊이가 M과 같아지면 탐색 과정에서 담았던 배열을 출력
 		if (depth == M) {
 			for (int val : arr) {
@@ -36,15 +33,9 @@ class NAndM_1 {
 			return;
 		}
 
-		for (int i = 0; i < N; i++) {
-			if (!visit[i]) {		// 만약 해당 노드(값)을 방문하지 않았다면
-				visit[i] = true;	// 해당 노드를 방문 상태로 변경
-				arr[depth] = i + 1;	// 해당 깊이를 index로 하여 i + 1 값 저장
-				dfs(depth + 1);		// 다음 자식 노드 방문을 위해 depth를 1 증가시기면서 재귀 호출
-				
-				// 자식 노드 방문이 끝나고 돌아오면 방문 노드를 방문하지 않은 상태로 변경
-				visit[i] = false;
-			}
+		for (int i = at; i <= N; i++) {
+			arr[depth] = i; // 해당 깊이를 index로 하여 해당 위치에 i 값 저장
+			dfs(i, depth + 1); // 다음 자식 노드 방문을 위해 재귀 호출
 		}
 	}
 }
