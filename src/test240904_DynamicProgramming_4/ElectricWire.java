@@ -23,16 +23,21 @@ class ElectricWire {
 		}
 
 		// 첫 번째 원소(A 전봇대)를 기준으로 오름차순으로 정렬
-		Arrays.sort(wire, new Comparator<int[]>() {
-			@Override
-			public int compare(int[] o1, int[] o2) {
-				return o1[0] - o2[0];
-			}
+		/*
+		 * Arrays.sort(wire, new Comparator<int[]>() {
+		 * 
+		 * @Override public int compare(int[] o1, int[] o2) { return o1[0] - o2[0]; }
+		 * });
+		 */
+
+		// 람다식으로 오름차순 정렬
+		Arrays.sort(wire, (o1, o2) -> {
+			return o1[0] - o2[0];
 		});
 
 		int max = 0;
 
-		// i번째 A 전봇대를 기준으로 연결 가능한 갯수 탐색 및 최댓값 찾기
+		// i 번째 A 전봇대를 기준으로 연결 가능한 갯수 탐색 및 최댓값 찾기
 		for (int i = 0; i < N; i++) {
 			max = Math.max(max, ewire(i));
 		}

@@ -20,11 +20,11 @@ class LCS {
 
 	static int find_LCS(int x, int y) {
 		// 인덱스 밖 (공집합)일 경우 0 반환
-		if (x == -1 || y == -1) {
+		if (x < 0 || y < 0) {
 			return 0;
 		}
 
-		// 만약 탐색하지 않은 인덱스라면?
+		// 만약 탐색하지 않은 인덱스라면
 		if (dp[x][y] == null) {
 			dp[x][y] = 0;
 
