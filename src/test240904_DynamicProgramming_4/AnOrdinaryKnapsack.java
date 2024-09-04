@@ -32,7 +32,7 @@ class AnOrdinaryKnapsack {
 	}
 
 	static int knapsack(int i, int k) {
-		// i가 0미만, 즉 범위 밖이 된다면
+		// i가 0 미만, 즉 범위 밖이 된다면
 		if (i < 0)
 			return 0;
 
